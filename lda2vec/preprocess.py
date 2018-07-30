@@ -66,7 +66,7 @@ def tokenize(texts, max_length, skip=-2, attr=LOWER, merge=False, nlp=None,
     -2
     """
     if nlp is None:
-        nlp = English()
+        nlp = spacy.load('en')
     data = np.zeros((len(texts), max_length), dtype='int32')
     data[:] = skip
     bad_deps = ('amod', 'compound')
